@@ -17,12 +17,12 @@ header {
   background: white;
   z-index: 2;
   margin-top: 0px;
-  padding: 0 10px;
-  padding-top: 20px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
 }
 
 main {
   margin-top: 70px;
+  padding: 0;
   width: 100%;
   background: #f9f9f9;
   min-height: 900px;
@@ -30,6 +30,80 @@ main {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
 }
 
+.navigation {
+  width: 850px;
+  margin: auto;
+}
+
 h3 {
   font-family: Times;
+}
+
+.question-box {
+  width: 850px;
+  height: 325px;
+  margin: auto;
+  background: white;
+  padding: 0;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
+}
+
+.question-pane {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 225px);
+  height: calc(100% - 45px);
+  background: #e1fafc;
+}
+
+.question-text {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 90px;
+  border: 1px solid red;
+}
+
+.question-data-pane {
+  display: inline-block;
+  width: 220px;
+  right: 0;
+  top: 0;
+  height: calc(100% - 45px);
+  background: white;
+}
+
+.commenters-pane {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 90px);
+  height: calc(100% - 80px);
+  background: white;
+}
+
+.load-more {
+  display: block;
+  width: 850px;
+  height: 100px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
+  padding: 0 40px;
+  line-height: 100px;
+  vertical-align: middle;
+}
+
+.load-more-text {
+  color: #f22613;
+  font-family: "Times";
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.avatar {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
 }
