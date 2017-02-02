@@ -9,7 +9,7 @@ body {
 }
 
 /*
-*************      CODE FOR TEH HEADER       *****************
+*************      Code for the header       *****************
 */
 
 header {
@@ -116,7 +116,7 @@ header .search button {
 }
 
 /*
-*************      CODE FOR MAIN PART       *****************
+*************      Code for the questions pane       *****************
 */
 
 main {
@@ -143,9 +143,7 @@ main {
 .question-pane {
   position: relative;
   float: left;
-  /*width: calc(100% - 225px);*/
   width: 100%;
-  /*height: calc(100% - 45px);*/
   height: 100%;
   background: #e1fafc;
 }
@@ -203,6 +201,7 @@ main {
   width: 50px;
   height: 50px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .name, .qstn-title {
@@ -213,6 +212,7 @@ main {
   font-family: "Montserrat";
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .qstn-title {
@@ -320,9 +320,148 @@ main {
 }
 
 /*
-********************    Responsiveness logic    ******************
-
+*******************   Code for profile modal    ******************
 */
+
+.modal {
+  padding: 0;
+  /*width: 100%;*/
+  margin: 0;
+}
+
+.modal-open {
+  overflow: visible;
+}
+
+.modal-scrollbar-measure{
+  overflow:hidden;
+}
+
+.modal-dialog {
+  width: 100%;
+  margin: 0;
+}
+
+.modal-content {
+  border-radius: 0px;
+}
+
+.modal-header {
+  border: none;
+}
+
+.user-info {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.user-info h4 {
+  color: blue;
+  font-family: "Montserrat";
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.user-info p {
+  display: block;
+  font-family: 'Farsan', cursive;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user-info .modal-user-text, .modal-body .modal-user-text {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+  color: grey;
+  margin-right: 5px;
+}
+
+.modal-avatar {
+  height: 75px;
+  width: auto;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+.user-info {
+  width: 100%;
+  border-bottom: 1px solid #e0e4cc;
+}
+
+.modal-body {
+  text-align: center;
+  margin-top: -15px;
+}
+
+.modal-body p {
+  font-family: 'Farsan', cursive;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.modal-user-square {
+  width: 100px;
+  height: 100px;
+  background: #c5eff7;
+  display: inline-block;
+  margin: 5px;
+  vertical-align: middle;
+  line-height: 35px;
+  padding-top: 10px;
+}
+
+.modal-body .modal-user-square:first-of-type {
+  transform: rotate(20deg);
+}
+
+.modal-user-square:nth-of-type(2) {
+  transform: rotate(-15deg);
+}
+
+.modal-user-square:nth-of-type(3) {
+  transform: rotate(-5deg);
+}
+
+.modal-user-square:last-of-type {
+  transform: rotate(12deg);
+}
+
+.modal-body .modal-user-square p {
+  font-family: 'Farsan', cursive;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body .modal-user-square p:first-of-type {
+  font-size: 24px;
+}
+
+.modal-body .modal-user-square:first-of-type p {
+  transform: rotate(-20deg);
+}
+
+.modal-user-square:nth-of-type(2) p {
+  transform: rotate(15deg);
+}
+
+.modal-user-square:nth-of-type(3) p {
+  transform: rotate(5deg);
+}
+
+.modal-user-square:last-of-type p {
+  transform: rotate(-12deg);
+}
+
+.modal-user-square-container {
+  margin: 35px auto;
+  width: 299px;
+}
+
+
+/*
+********************    Responsiveness logic    ******************
+*/
+
 
 @media screen and (min-width: 650px) {
   .radio-buttons {
@@ -347,6 +486,26 @@ main {
 
   .commenters-pane {
     display: inline-block;
+  }
+
+  .modal-dialog {
+    margin: 20px 0;
+  }
+
+  .user-info p {
+    display: inline-block;
+  }
+
+  .user-info p:last-of-type {
+    float: right;
+  }
+
+  .user-info p:first-of-type {
+    float: left;
+  }
+
+  .modal-user-square-container {
+    width: 100%;
   }
 
 }
@@ -376,6 +535,22 @@ main {
   .load-more {
     width: 850px;
   }
+
+  .modal-dialog {
+    width: 900px;
+    margin: 40px auto;
+  }
+
+  .user-info {
+    width: 700px;
+    margin: auto;
+  }
+
+  .modal-body {
+    width: 700px;
+    margin: auto;
+  }
+
 }
 
 @media screen and (min-width: 1100px) {
