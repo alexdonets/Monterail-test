@@ -20,7 +20,90 @@ header {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
 }
 
+header .navigation {
+  width: 850px;
+  margin: auto;
 
+}
+
+header .search {
+  width: 850px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.navigation h3 {
+  font-family: Times;
+}
+
+.radio-buttons {
+  float: right;
+  margin: 0 10px;
+}
+
+.radio-inline {
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Montserrat";
+  margin: 0 5px;
+}
+
+.sort-by {
+  float: right;
+  margin-left: 10px;
+}
+
+.sort-by .sort-title {
+  font-size: 13px;
+  font-style: italic;
+  font-family: "Montserrat";
+}
+
+.sort-by .option {
+  font-size: 14px;
+  color: blue;
+  font-family: "Montserrat";
+  margin: 3px;
+  cursor: pointer;
+}
+
+.sort-by .active {
+  color: grey;
+  text-decoration: underline;
+}
+
+.radio-inline input {
+  margin-top: 2px;
+}
+
+.navigation .glyphicon {
+  color: blue;
+  font-size: 19px;
+  margin-left: 10px;
+}
+
+header .search input {
+  border-radius: 0px;
+  border: 1px solid #e0e4cc;
+  background: #f6f7f2;
+  height: 35px;
+  width: 75%;
+  padding: 0 15px;
+  font-family: "Times";
+  font-size: 16px;
+  float: left;
+}
+
+header .search button {
+  width: 22%;
+  height: 35px;
+  float: right;
+  margin: 0 5px;
+  background: white;
+  border-radius: 0px;
+  border: 1px solid #95a5a6;
+  font-family: "Montserrat";
+}
 
 main {
   margin-top: 70px;
@@ -30,15 +113,6 @@ main {
   min-height: 900px;
   position: relative;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
-}
-
-.navigation {
-  width: 850px;
-  margin: auto;
-}
-
-h3 {
-  font-family: Times;
 }
 
 .question-box {
