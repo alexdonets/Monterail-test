@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Farsan|Montserrat|Open+Sans+Condensed:300" rel="stylesheet">
   </head>
   <body ng-controller="AppController">
+
+    <!-- Header -->
+
     <header>
       <div class="navigation">
         <h3>QUESTIONS <span class="glyphicon glyphicon glyphicon-plus-sign"></span>
@@ -33,15 +36,16 @@
     </header>
 
 
+    <!-- Main pane with questions -->
 
     <main>
 
       <div ng-repeat="qstn in questions | limitTo:quantity" class="question-box">
         <div class="question-pane">
-          <img class="img-circle avatar" src="../images/default-avatar.jpg">
+          <img  data-toggle="modal" data-target="#profile-modal" ng-click="setCurrentUser(profile[qstn.author].id)" class="img-circle avatar" src="../images/default-avatar.jpg">
           <p class="asked-title question-pane-text">ASKED</p>
           <div class="question-text">
-            <p><span class="name">{{profile[qstn.author].name}}</span> <span class="question-pane-text">IS ASKING:</span></p>
+            <p><span class="name" data-toggle="modal" data-target="#profile-modal" ng-click="setCurrentUser(profile[qstn.author].id)">{{profile[qstn.author].name}}</span> <span class="question-pane-text">IS ASKING:</span></p>
             <p><span class="qstn-title">{{qstn.title}}</span></p>
           </div>
           <div class="commenters-pane">
@@ -80,11 +84,57 @@
          <p class="load-more-text" ng-click="showMore()">load more questions</p>
      </div>
 
-
     </main>
+
+    <!-- Profile modal -->
+    <div id="profile-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="user-info">
+              <img class="img-circle modal-avatar" src="../images/default-avatar.jpg"> <br>
+              <h4>{{currentUser.name}}</h4><br>
+              <p><span class="modal-user-text">MEMBER FOR</span> {{currentUser.memberFor}}</p>
+              <p><span class="modal-user-text">LAST SEEN</span> {{currentUser.lastSeen}}</p>
+              <p><span class="modal-user-text">ACTIVITY LEVEL</span> {{currentUser.activityLevel}}</p>
+            </div>
+          </div>
+          <div class="modal-body">
+            <p>How it all started</p>
+
+            <p class="modal-user-text">THAT'S WHERE WE HAVE BEEN THESE 5 MONTHS AGO</p>
+
+            <div class="modal-user-square-container">
+              <div class="modal-user-square"><p>{{currentUser.peers}}</p><p>peers</p></div>
+              <div class="modal-user-square"><p>{{currentUser.discussions}}</p><p>discussions</p></div>
+              <div class="modal-user-square"><p>{{currentUser.findings}}</p><p>findings</p></div>
+              <div class="modal-user-square"><p>{{currentUser.questions}}</p><p>questions</p></div>
+            </div>
+
+            <p class="modal-user-text">WHO JOINED THE PLATFORM THAT SAME PERIOD</p>
+
+
+            <p class="modal-user-text">THE HOTTEST DISCUSSION THESE DAYS</p>
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <!-- Scripts -->
+
     <script src="../scripts/jquery.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js "></script>
     <script src="../scripts/main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </body>
 </html>
