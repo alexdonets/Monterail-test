@@ -50,7 +50,7 @@ h3 {
 
 .question-pane {
   position: relative;
-  display: inline-block;
+  float: left;
   width: calc(100% - 225px);
   height: calc(100% - 45px);
   background: #e1fafc;
@@ -63,7 +63,8 @@ h3 {
 }
 
 .question-data-pane {
-  display: inline-block;
+  float: right;
+  margin-top: 100px;
   width: 220px;
   right: 0;
   top: 0;
@@ -128,4 +129,27 @@ h3 {
   font-size: 12px;
   font-weight: bold;
   color: grey;
+}
+
+.asked-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 2px 10px;
+  padding: 3px 20px;
+  border-top: 1px solid grey;
+  font-size: 14px;
+}
+
+.question-data-pane p {
+  display: block;
+  position: relative;
+  margin: 25px 35px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.question-data-pane span {
+  font-family: 'Farsan', cursive;
+  font-size: 20px;
 }
