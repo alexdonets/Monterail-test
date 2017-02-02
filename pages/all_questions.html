@@ -24,16 +24,19 @@
       <div ng-repeat="qstn in questions | limitTo:quantity" class="question-box">
         <div class="question-pane">
           <img class="img-circle avatar" src="../images/default-avatar.jpg">
+          <p class="asked-title question-pane-text">ASKED</p>
           <div class="question-text">
             <p><span class="name">{{profile[qstn.author].name}}</span> <span class="question-pane-text">IS ASKING:</span></p>
             <p><span class="qstn-title">{{qstn.title}}</span></p>
           </div>
           <div class="commenters-pane">
-
+            
           </div>
         </div>
         <div class="question-data-pane">
-
+          <p>{{qstn.related}} <span>related discussion</span></p>
+          <p>{{qstn.peers}} <span>peers involved</span></p>
+          <p>{{qstn.conversations}} <span>conversations</span></p>
         </div>
 
       </div>
