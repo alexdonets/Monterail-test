@@ -53,5 +53,11 @@ myApp.controller('AppController', ['$scope', function($scope){
     }
   }
 
+  $scope.currentUser = $scope.profile[0];
+
+  $scope.setCurrentUser = function(id) {
+    $scope.currentUser = $scope.profile[id];
+  }
+
 
 }]);
