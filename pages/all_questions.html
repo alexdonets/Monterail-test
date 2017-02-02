@@ -12,7 +12,22 @@
   <body ng-controller="AppController">
     <header>
       <div class="navigation">
-        <h3>QUESTIONS</h3>
+        <h3>QUESTIONS <span class="glyphicon glyphicon glyphicon-plus-sign"></span>
+
+          <div class="sort-by">
+            <span class="sort-title">Sort by:</span> <span class="active option">recent</span> <span class="sort-title">or</span> <span class="option">hot</span>
+          </div>
+          <div class="radio-buttons">
+            <label class="radio-inline"><input type="radio" name="optradio">My shelf</label>
+            <label class="radio-inline"><input type="radio" name="optradio">All questions</label>
+          </div>
+
+        </h3>
+
+      </div>
+      <div class="search">
+        <input type="text" name="search" placeholder="Search question">
+        <button type="button">SEARCH</button>
       </div>
 
     </header>
