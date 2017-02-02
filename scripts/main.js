@@ -19,14 +19,17 @@ myApp.controller('AppController', ['$scope', function($scope){
 
 
   $scope.comments = [
-    {id: 0, author: 2, timeCreated: "yesterday", questionParent: 0, rating: 10, commentParent: -1},
-    {id: 1, author: 3, timeCreated: "2 days ago", questionParent: 0, rating: 6, commentParent: -1},
-    {id: 2, author: 3, timeCreated: "yesterday", questionParent: 1, rating: 8, commentParent: -1},
-    {id: 3, author: 1, timeCreated: "yesterday", questionParent: 1, rating: -4, commentParent: -1},
-    {id: 4, author: 1, timeCreated: "5 days ago", questionParent: 2, rating: 1, commentParent: -1},
-    {id: 5, author: 0, timeCreated: "3 days ago", questionParent: 2, rating: -7, commentParent: -1},
-    {id: 6, author: 0, timeCreated: "today", questionParent: 2, rating: 3, commentParent: 5},
-    {id: 7, author: 0, timeCreated: "today", questionParent: 3, rating: 5, commentParent: -1}
+    {id: 0, author: 2, timeCreated: "yesterday", questionParent: 0, rating: 10, commentParent: -1, answered: false},
+    {id: 1, author: 3, timeCreated: "2 days ago", questionParent: 0, rating: 6, commentParent: -1, answered: false},
+    {id: 2, author: 3, timeCreated: "yesterday", questionParent: 1, rating: 8, commentParent: -1, answered: false},
+    {id: 3, author: 1, timeCreated: "yesterday", questionParent: 1, rating: -4, commentParent: -1, answered: true},
+    {id: 4, author: 1, timeCreated: "5 days ago", questionParent: 2, rating: 1, commentParent: -1, answered: false},
+    {id: 5, author: 0, timeCreated: "3 days ago", questionParent: 2, rating: -7, commentParent: -1, answered: false},
+    {id: 6, author: 0, timeCreated: "today", questionParent: 2, rating: 3, commentParent: 5, answered: true},
+    {id: 7, author: 0, timeCreated: "today", questionParent: 3, rating: 5, commentParent: -1, answered: true},
+    {id: 8, author: 0, timeCreated: "today", questionParent: 0, rating: 7, commentParent: -1, answered: false},
+    {id: 9, author: 0, timeCreated: "today", questionParent: 0, rating: 8, commentParent: -1, answered: true},
+    {id: 10, author: 0, timeCreated: "today", questionParent: 0, rating: 1, commentParent: -1, answered: false}
   ];
 
   $scope.comment = "Elit rebum melius id mei. Usu legendos tincidunt in, sea dictas reformidans eu. Duis libris doctus in ius. Appareat salutatus molestiae an has, errem docendi cu mea, facilisi persecuti cum ex.";
@@ -35,6 +38,19 @@ myApp.controller('AppController', ['$scope', function($scope){
 
   $scope.showMore = function(){
     $scope.quantity += 2;
+  }
+
+  $scope.qstnComments = new Array();
+
+  $scope.getComments = function(questionId) {
+
+    $scope.qstnComments = new Array();
+    var i;
+    for(i = 0; i < $scope.comments.length; i++) {
+      if (questionId === $scope.comments[i].questionParent) {
+        $scope.qstnComments.push($scope.comments[i]);
+      }
+    }
   }
 
 
