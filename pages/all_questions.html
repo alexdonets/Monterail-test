@@ -30,7 +30,28 @@
             <p><span class="qstn-title">{{qstn.title}}</span></p>
           </div>
           <div class="commenters-pane">
-            
+            {{getComments(qstn.id)}}
+            <div ng-if="qstnComments.length > 4" class="commenter-div more-activities-box">
+              <p>{{qstnComments.length}}</p>
+              <div class="answer-info">
+                <p>more activities</p>
+                <span class="dot">●</span>
+              </div>
+            </div>
+            <div ng-repeat="commenter in qstnComments | limitTo:4" class="commenter-div">
+
+              <img class="img-circle avatar" src="../images/default-avatar.jpg">
+
+              <div ng-if="commenter.answered === true" class="answer-info answered">
+                <p ng-if="commenter.answered === true" class="commenters-pane-text question-pane-text">ANSWERED</p>
+                <span class="dot">●</span>
+              </div>
+              <div ng-if="commenter.answered != true" class="answer-info">
+                <p ng-if="commenter.answered != true" class="commenters-pane-text question-pane-text">COMMENTED</p>
+                <span class="dot">●</span>
+              </div>
+
+            </div>
           </div>
         </div>
         <div class="question-data-pane">
