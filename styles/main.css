@@ -330,7 +330,7 @@ main {
 }
 
 .modal-open {
-  overflow: visible;
+  /*overflow: visible;*/
 }
 
 .modal-scrollbar-measure{
